@@ -2,6 +2,8 @@
 
 This guide walks you through **downloading a model from Hugging Face**, **uploading it to S3**, **importing it into AWS Bedrock**, **deploying a Lambda function**, **setting up an API Gateway**, and **invoking it using Python and Node.js**.
 
+🚀🚀🚀App is here: [DeepSeek-R1](https://eagle0504-deepseek-r1.hf.space)
+
 ![system](./docs/system.png)
 
 ---

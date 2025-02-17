@@ -1,6 +1,9 @@
 import streamlit as st
 from helper import query_deepseek  # Import the backend function
 
+# Set Streamlit page config
+st.set_page_config(page_title="DeepSeek-R1 Chatbot", layout="wide")
+
 # Streamlit app UI
 st.title("🤖 DeepSeek-R1 Chatbot")
 
@@ -11,6 +14,11 @@ st.sidebar.header("⚙️ Model Settings")
 max_gen_len = st.sidebar.slider("📝 Max Generation Length", min_value=100, max_value=2048, value=1024, step=50)
 temperature = st.sidebar.slider("🔥 Temperature (Creativity)", min_value=0.0, max_value=1.0, value=0.1, step=0.05)
 top_p = st.sidebar.slider("🎯 Top-P Sampling (Diversity)", min_value=0.0, max_value=1.0, value=0.9, step=0.05)
+
+# Button to clear chat history
+if st.sidebar.button("🗑️ Clear Chat History"):
+    st.session_state.messages = []  # Reset conversation history
+    st.rerun()  # Refresh the app
 
 # Initialize chat history
 if "messages" not in st.session_state:

@@ -33,7 +33,7 @@ def query_deepseek(prompt: str, max_gen_len: int, temperature: float, top_p: flo
             full_response = response.json()
             
             # Extract the output text from the model response
-            output_text = full_response.get("model_response", {}).get("generation", "No output found.")
+            output_text = full_response.get("model_response").get("choices")[0].get("text")
             return output_text
         else:
             return f"Error {response.status_code}: {response.text}"

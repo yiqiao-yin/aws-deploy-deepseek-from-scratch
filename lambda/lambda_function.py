@@ -4,8 +4,8 @@ import json
 # Initialize AWS Bedrock Runtime client
 bedrock_runtime = boto3.client("bedrock-runtime", region_name="us-east-1")
 
-# Model ARN (Replace with your actual model ARN)
-MODEL_ARN = "arn:aws:bedrock:us-east-1:141273913934:imported-model/pg6s1qosvls9"
+# Model ARN updated with the new model ID
+MODEL_ARN = "arn:aws:sagemaker:us-east-1:141273913934:endpoint/endpoint-quick-start-ummc0"
 
 def lambda_handler(event, context):
     """
